@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+   <data>
+      <variable
+          name="intValue"
+          type="Integer" />
+
+   </data>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="20dp"
+    >
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="RED"
+       android:background="@color/red"
+       android:textSize="30dp"
+      android:id="@+id/tvRed"
+
+       />
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="BLUE"
+       android:background="@color/purple_500"
+       android:textSize="30dp"
+       android:id="@+id/tvBlue"
+       android:layout_alignParentEnd="true"
+
+       />
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Count"
+       android:layout_below="@id/tvRed"
+       android:layout_marginTop="30dp"
+       android:textSize="20dp"
+       android:id="@+id/tvcount"
+
+       />
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@{intValue.toString()}"
+       android:layout_marginTop="30dp"
+       android:textSize="20dp"
+       android:id="@+id/tvgetcount"
+       android:layout_below="@id/tvRed"
+       android:layout_toEndOf="@id/tvcount"
+       android:layout_marginStart="10dp"
+
+       />
+  <androidx.fragment.app.FragmentContainerView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/fragmentshowdata"
+      android:name="com.gaurav.mutablelivedatamvvm.FragmentShowColor"
+    android:layout_below="@id/tvgetcount"  />
+
+</RelativeLayout>
+</layout>
