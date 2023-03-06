@@ -22,6 +22,7 @@ class FragmentShowColor : Fragment() {
     lateinit var binding: FragmentShowColorBinding
     lateinit var mainActivity:MainActivity
     lateinit var userModleActivity: UserModleActivity
+    var j=0
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -47,8 +48,17 @@ class FragmentShowColor : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding=FragmentShowColorBinding.inflate(layoutInflater)
+         binding?.btnReset?.setOnClickListener {
+         mainActivity.i=j
+         mainActivity.binding.tvgetcount.text=j.toString()
 
-        return binding.root
+
+
+         }
+
+
+
+        return binding?.root
     }
 
     companion object {

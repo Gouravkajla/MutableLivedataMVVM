@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     lateinit var userModleActivity: UserModleActivity
     var i = 0
-    val TAG = "MainActivity"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -19,7 +19,21 @@ class MainActivity : AppCompatActivity() {
         binding.tvRed.setOnClickListener {
             userModleActivity.text.setValue("Red is clicked")
         }
+        binding.tvBlue.setOnClickListener {
+            userModleActivity.text.setValue("Blue is clicked")
+        }
+        binding.fragmentshowdata.setOnClickListener{
+            i++
+            binding.tvgetcount.text=i.toString()
+
+        }
+
+
     }
+
+
+
+
 
 }
 
